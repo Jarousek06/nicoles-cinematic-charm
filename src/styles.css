@@ -118,7 +118,6 @@
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --color-blush: var(--blush);
-  --color-gold: #b38728;
 }
 
 .dark {
@@ -181,14 +180,14 @@
   }
 }
 
-@utility text-gold {
+@utility gold-text {
   background-image: var(--gradient-gold);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-@utility bg-gold {
+@utility gold-fill {
   background-image: var(--gradient-gold);
 }
 
