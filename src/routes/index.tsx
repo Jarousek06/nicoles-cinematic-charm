@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { Hero } from "@/components/nicole/Hero";
-import { About, Offer, Gallery, Kids } from "@/components/nicole/Sections";
+import { About, Offer, Quote, Gallery, Kids } from "@/components/nicole/Sections";
 import { Contact } from "@/components/nicole/Contact";
 import marble from "@/assets/marble-bg.jpg";
 
@@ -108,38 +108,39 @@ function Index() {
         <Hero />
         <About />
         <Offer />
+        <Quote />
         <Gallery />
         <Kids />
         <Contact />
       </main>
 
-      <footer className="relative mt-10 border-t border-[#b38728]/25 bg-white/45 backdrop-blur-xl">
-        <div className="mx-auto max-w-6xl px-6 py-14 text-center">
+      <footer className="dark-marble marble-veins sheen relative mt-16 overflow-hidden border-t border-[#b38728]/30">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 text-center">
           <p className="gold-text font-display text-3xl">Nicole&rsquo;s Coffee</p>
           <div className="gold-rule mx-auto mt-6 max-w-[10rem]" />
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-6 text-sm text-[#f4ead0]/70">
             Viničná 692, 411 08 Štětí · Po–Pá 9:00–17:00 · So–Ne 10:00–16:00
           </p>
           <div className="mt-6 flex justify-center gap-4 text-xs uppercase tracking-[0.2em]">
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/profile.php?id=61576350980109"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/70 transition-colors hover:text-[#b38728]"
+              className="text-[#e9d9a8]/80 transition-colors hover:text-[#fcf6ba]"
             >
               Facebook
             </a>
-            <span className="text-foreground/30">·</span>
+            <span className="text-[#e9d9a8]/30">·</span>
             <a
-              href="https://www.firmy.cz/"
+              href="https://www.firmy.cz/detail/13941981-nicole-s-coffee-steti.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/70 transition-colors hover:text-[#b38728]"
+              className="text-[#e9d9a8]/80 transition-colors hover:text-[#fcf6ba]"
             >
               Firmy.cz
             </a>
           </div>
-          <p className="mt-8 text-xs text-muted-foreground">
+          <p className="mt-8 text-xs text-[#f4ead0]/45">
             © {new Date().getFullYear()} Nicole&rsquo;s Coffee. Všechna práva vyhrazena.
           </p>
         </div>

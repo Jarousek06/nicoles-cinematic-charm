@@ -110,7 +110,7 @@ export function Offer() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {offer.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <article className="glass-card glass-card-hover group h-full rounded-[1.4rem] p-8 text-center">
+              <article className="glass-card glass-card-hover gold-ring group relative h-full rounded-[1.4rem] p-8 text-center">
                 <motion.img
                   src={item.icon}
                   alt=""
@@ -133,6 +133,28 @@ export function Offer() {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function Quote() {
+  return (
+    <section className="relative px-6 py-10">
+      <div className="dark-marble marble-veins sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-[#b38728]/30 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
+        <Reveal>
+          <p className="text-[0.7rem] uppercase tracking-[0.45em] text-[#e9d9a8]/70">
+            Nicole&rsquo;s Coffee
+          </p>
+          <blockquote className="shimmer-text mx-auto mt-7 max-w-3xl font-display text-3xl leading-snug sm:text-5xl">
+            „Nejlepší chvíle voní kávou a chutnají po čerstvém dortu.&rdquo;
+          </blockquote>
+          <div className="gold-rule mx-auto mt-9 max-w-[9rem]" />
+          <p className="mx-auto mt-7 max-w-xl text-sm leading-relaxed text-[#f4ead0]/70">
+            Poctivé suroviny, domácí receptury a klid, ve kterém si každé sousto vychutnáte. Malý
+            luxus v srdci Štětí.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

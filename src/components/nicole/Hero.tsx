@@ -52,7 +52,7 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[100svh] items-center justify-center overflow-hidden"
     >
-      <motion.div className="absolute inset-[-10%]" style={{ y: bgY }}>
+      <motion.div className="sheen absolute inset-[-10%]" style={{ y: bgY }}>
         <img
           src={marble}
           alt=""
@@ -62,7 +62,17 @@ export function Hero() {
           className="h-full w-full object-cover"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.55),rgba(248,246,242,0.9))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.5),rgba(248,246,242,0.88))]" />
+      {/* cinematic vignette */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(20,14,8,0.28))]"
+      />
+      {/* pulsing gold aura behind the title */}
+      <div
+        aria-hidden
+        className="gold-aura pointer-events-none absolute left-1/2 top-1/2 h-[26rem] w-[36rem] -translate-x-1/2 -translate-y-1/2"
+      />
 
       <Floating
         src={iconCoffee}

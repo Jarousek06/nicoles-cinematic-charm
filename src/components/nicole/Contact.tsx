@@ -64,7 +64,7 @@ export function Contact() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/profile.php?id=61576350980109"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#b38728] hover:bg-white"
@@ -72,7 +72,7 @@ export function Contact() {
                   <Facebook className="h-4 w-4" aria-hidden /> Facebook
                 </a>
                 <a
-                  href="https://www.firmy.cz/"
+                  href="https://www.firmy.cz/detail/13941981-nicole-s-coffee-steti.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#b38728] hover:bg-white"
