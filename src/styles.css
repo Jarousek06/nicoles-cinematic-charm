@@ -446,6 +446,20 @@
   color: oklch(0.96 0.01 85);
 }
 
+/* Seamless infinite marquee (content duplicated in markup). */
+@utility marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

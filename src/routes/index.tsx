@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { Hero } from "@/components/nicole/Hero";
-import { About, Offer, Quote, Gallery, Kids } from "@/components/nicole/Sections";
+import { About, Offer, Quote, Gallery, Kids, Marquee, Reviews } from "@/components/nicole/Sections";
 import { Contact } from "@/components/nicole/Contact";
 import marble from "@/assets/marble-bg.jpg";
 
@@ -62,6 +62,7 @@ const nav = [
   { href: "#nabidka", label: "Nabídka" },
   { href: "#galerie", label: "Galerie" },
   { href: "#deti", label: "Pro děti" },
+  { href: "#reference", label: "Reference" },
   { href: "#kontakt", label: "Kontakt" },
 ];
 
@@ -106,11 +107,13 @@ function Index() {
 
       <main>
         <Hero />
+        <Marquee />
         <About />
         <Offer />
         <Quote />
         <Gallery />
         <Kids />
+        <Reviews />
         <Contact />
       </main>
 

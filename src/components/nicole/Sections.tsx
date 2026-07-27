@@ -143,6 +143,83 @@ export function Offer() {
   );
 }
 
+const marqueeItems = [
+  "Výběrová káva",
+  "Domácí zákusky",
+  "Dorty na objednávku",
+  "Pizza & slané",
+  "Dětský koutek",
+  "Rodinná atmosféra",
+];
+
+export function Marquee() {
+  const row = [...marqueeItems, ...marqueeItems];
+  return (
+    <div className="tufted-velvet relative overflow-hidden border-y-2 border-[#b38728]/40 py-5">
+      <div className="marquee-track flex w-max items-center whitespace-nowrap">
+        {row.map((t, i) => (
+          <span key={i} className="flex items-center">
+            <span className="font-display text-lg tracking-wide text-[#f4ead0] sm:text-xl">{t}</span>
+            <span className="mx-8 text-[#b38728]">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const reviews = [
+  {
+    text: "Příjemné prostředí se širokým výběrem cukrárenských produktů. Přidali i pizzu a dětský koutek.",
+    author: "Návštěvník",
+    source: "Firmy.cz",
+  },
+  {
+    text: "Dobrá káva a velký výběr sladkých zákusků.",
+    author: "Návštěvnice",
+    source: "Firmy.cz",
+  },
+];
+
+export function Reviews() {
+  return (
+    <section id="reference" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-5xl px-6">
+        <SectionTitle
+          eyebrow="Reference"
+          title="Co říkají hosté"
+          subtitle="Pár slov od těch, kdo se u nás zastavili."
+        />
+        <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
+          {reviews.map((r, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <figure className="glass-card glass-card-hover relative h-full rounded-[1.4rem] p-8 sm:p-10">
+                <span
+                  aria-hidden
+                  className="gold-text absolute right-6 top-2 font-display text-6xl leading-none opacity-60"
+                >
+                  &rdquo;
+                </span>
+                <div className="flex gap-1 text-[#b38728]" aria-label="Hodnocení 5 z 5">
+                  {"★★★★★".split("").map((s, j) => (
+                    <span key={j}>{s}</span>
+                  ))}
+                </div>
+                <blockquote className="mt-5 text-base leading-relaxed text-foreground/80">
+                  {r.text}
+                </blockquote>
+                <figcaption className="mt-6 text-sm text-muted-foreground">
+                  — {r.author} · {r.source}
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Quote() {
   return (
     <section className="relative px-6 py-10">
