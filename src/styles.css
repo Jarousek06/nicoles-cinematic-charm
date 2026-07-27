@@ -395,6 +395,57 @@
   }
 }
 
+/* Button-tufted velvet (capitonné) — matches the café's black velvet chairs:
+   puffed diamonds with subtle gilded buttons. */
+@utility tufted-velvet {
+  background-color: #16110e;
+  background-image:
+    /* gilded button dimples on a diamond lattice (two staggered grids) */
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0 1.5px,
+      rgba(214, 182, 120, 0.45) 2px 3px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0 1.5px,
+      rgba(214, 182, 120, 0.45) 2px 3px,
+      transparent 3.5px
+    ),
+    /* soft puff sheen filling the diamonds between buttons */
+    radial-gradient(
+      ellipse 54px 36px at 50% 50%,
+      rgba(255, 244, 214, 0.11),
+      rgba(255, 244, 214, 0.035) 45%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 54px 36px at 50% 50%,
+      rgba(255, 244, 214, 0.11),
+      rgba(255, 244, 214, 0.035) 45%,
+      transparent 72%
+    ),
+    /* seam shading to deepen the quilting */
+    linear-gradient(135deg, rgba(0, 0, 0, 0.28) 0%, transparent 42%, transparent 58%, rgba(0, 0, 0, 0.28) 100%),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.28) 0%, transparent 42%, transparent 58%, rgba(0, 0, 0, 0.28) 100%);
+  background-size:
+    90px 90px,
+    90px 90px,
+    90px 90px,
+    90px 90px,
+    90px 90px,
+    90px 90px;
+  background-position:
+    0 0,
+    45px 45px,
+    45px 0,
+    0 45px,
+    0 0,
+    0 0;
+  color: oklch(0.96 0.01 85);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

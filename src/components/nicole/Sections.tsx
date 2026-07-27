@@ -146,7 +146,7 @@ export function Offer() {
 export function Quote() {
   return (
     <section className="relative px-6 py-10">
-      <div className="dark-marble marble-veins sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-[#b38728]/30 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
+      <div className="tufted-velvet sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border-2 border-[#b38728]/45 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
         <Reveal>
           <p className="text-[0.7rem] uppercase tracking-[0.45em] text-[#e9d9a8]/70">
             Nicole&rsquo;s Coffee

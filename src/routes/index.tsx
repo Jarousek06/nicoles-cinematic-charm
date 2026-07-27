@@ -114,7 +114,7 @@ function Index() {
         <Contact />
       </main>
 
-      <footer className="dark-marble marble-veins sheen relative mt-16 overflow-hidden border-t border-[#b38728]/30">
+      <footer className="tufted-velvet sheen relative mt-16 overflow-hidden border-t-2 border-[#b38728]/45">
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 text-center">
           <p className="gold-text font-display text-3xl">Nicole&rsquo;s Coffee</p>
           <div className="gold-rule mx-auto mt-6 max-w-[10rem]" />
