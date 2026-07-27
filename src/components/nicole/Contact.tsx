@@ -67,7 +67,7 @@ export function Contact() {
                   href="https://www.facebook.com/profile.php?id=61576350980109"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/5 px-5 py-2.5 text-sm transition-colors hover:border-[#fcf6ba] hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#b38728] hover:bg-white"
                 >
                   <Facebook className="h-4 w-4" aria-hidden /> Facebook
                 </a>
@@ -75,7 +75,7 @@ export function Contact() {
                   href="https://www.firmy.cz/detail/13941981-nicole-s-coffee-steti.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/5 px-5 py-2.5 text-sm transition-colors hover:border-[#fcf6ba] hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#b38728]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#b38728] hover:bg-white"
                 >
                   <Globe className="h-4 w-4" aria-hidden /> Firmy.cz
                 </a>
@@ -112,7 +112,7 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="mt-2 w-full rounded-xl border border-[#b38728]/30 bg-white/5 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
+                    className="mt-2 w-full rounded-xl border border-[#b38728]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
                   />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export function Contact() {
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full rounded-xl border border-[#b38728]/30 bg-white/5 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
+                    className="mt-2 w-full rounded-xl border border-[#b38728]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
                   />
                 </div>
                 <div>
@@ -136,7 +136,7 @@ export function Contact() {
                     name="message"
                     rows={5}
                     required
-                    className="mt-2 w-full resize-none rounded-xl border border-[#b38728]/30 bg-white/5 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
+                    className="mt-2 w-full resize-none rounded-xl border border-[#b38728]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#b38728] focus:ring-2 focus:ring-[#b38728]/25"
                   />
                 </div>
               </div>

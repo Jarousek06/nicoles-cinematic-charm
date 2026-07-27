@@ -38,7 +38,7 @@ export function About() {
             {["Výběrová káva", "Domácí zákusky", "Dětský koutek", "Rodinná atmosféra"].map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-[#b38728]/40 bg-white/5 px-4 py-1.5 text-xs tracking-wide text-foreground/85 backdrop-blur"
+                className="rounded-full border border-[#b38728]/35 bg-white/70 px-4 py-1.5 text-xs tracking-wide text-foreground/80 backdrop-blur"
               >
                 {t}
               </span>
@@ -111,26 +111,25 @@ export function Offer() {
           {offer.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
               <article className="glass-card glass-card-hover gold-ring group relative h-full rounded-[1.4rem] p-8 text-center">
-                <div className="ring-gold dark-marble relative mx-auto grid h-28 w-28 place-items-center rounded-full border border-[#b38728]/40 shadow-[inset_0_2px_22px_rgba(0,0,0,0.6),0_18px_34px_-16px_rgba(0,0,0,0.85)]">
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgba(252,246,186,0.2),transparent_72%)]"
-                  />
-                  <motion.img
-                    src={item.icon}
-                    alt=""
-                    aria-hidden
-                    loading="lazy"
-                    width={640}
-                    height={640}
-                    className="relative h-16 w-16 object-contain [filter:drop-shadow(0_6px_10px_rgba(0,0,0,0.5))_drop-shadow(0_0_16px_rgba(191,149,63,0.45))]"
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{
-                      duration: 5 + i * 0.4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
+                <div className="relative mx-auto h-28 w-28">
+                  <div className="gold-fill absolute inset-0 rounded-full opacity-90 shadow-[0_16px_34px_-14px_rgba(179,135,40,0.6)]" />
+                  <div className="absolute inset-[3px] grid place-items-center rounded-full bg-[#fdfbf7] shadow-[inset_0_2px_12px_rgba(90,70,40,0.14)]">
+                    <motion.img
+                      src={item.icon}
+                      alt=""
+                      aria-hidden
+                      loading="lazy"
+                      width={640}
+                      height={640}
+                      className="h-16 w-16 object-contain drop-shadow-[0_8px_14px_rgba(90,70,40,0.28)]"
+                      animate={{ y: [0, -7, 0] }}
+                      transition={{
+                        duration: 5 + i * 0.4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </div>
                 </div>
                 <h3 className="gold-text mt-6 text-2xl">{item.title}</h3>
                 <div className="gold-rule mx-auto mt-4 max-w-[3.5rem] opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
@@ -236,7 +235,7 @@ export function Kids() {
                   height={700}
                   className="h-full w-full object-cover"
                 />
-                <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(12,10,8,0.9),transparent_55%)] lg:block hidden" />
+                <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(253,251,247,0.85),transparent_45%)] lg:block hidden" />
               </div>
             </div>
           </div>
