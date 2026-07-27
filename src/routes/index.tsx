@@ -3,7 +3,6 @@ import { Toaster } from "sonner";
 import { Hero } from "@/components/nicole/Hero";
 import { About, Offer, Quote, Gallery, Kids } from "@/components/nicole/Sections";
 import { Contact } from "@/components/nicole/Contact";
-import marble from "@/assets/marble-bg.jpg";
 
 const TITLE = "Nicole's Coffee — Kavárna a cukrárna Štětí";
 const DESC =
@@ -68,19 +67,12 @@ const nav = [
 function Index() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <div
-        aria-hidden
-        className="fixed inset-0 -z-10 bg-cover bg-center opacity-70"
-        style={{ backgroundImage: `url(${marble})` }}
-      />
-      <div
-        aria-hidden
-        className="fixed inset-0 -z-10 bg-[linear-gradient(180deg,rgba(253,251,247,0.82),rgba(248,246,242,0.94))]"
-      />
+      <div aria-hidden className="gold-cracks fixed inset-0 -z-20" />
+      <div aria-hidden className="cracks-layer pointer-events-none fixed inset-0 -z-10" />
       <div aria-hidden className="grain-overlay" />
 
       <header className="fixed inset-x-0 top-0 z-40">
-        <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between gap-6 rounded-full border border-[#b38728]/25 bg-white/55 px-5 py-2.5 backdrop-blur-xl sm:px-7">
+        <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between gap-6 rounded-full border border-[#b38728]/35 bg-black/45 px-5 py-2.5 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:px-7">
           <a href="#hero" className="gold-text font-display text-lg tracking-wide sm:text-xl">
             Nicole&rsquo;s Coffee
           </a>

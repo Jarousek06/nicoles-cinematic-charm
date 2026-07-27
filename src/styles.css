@@ -63,25 +63,25 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.982 0.006 85);
-  --foreground: oklch(0.235 0.018 45);
-  --card: oklch(0.993 0.004 90);
-  --card-foreground: oklch(0.235 0.018 45);
-  --popover: oklch(0.993 0.004 90);
-  --popover-foreground: oklch(0.235 0.018 45);
-  --primary: oklch(0.68 0.098 78);
-  --primary-foreground: oklch(0.235 0.018 45);
-  --secondary: oklch(0.93 0.024 30);
-  --secondary-foreground: oklch(0.235 0.018 45);
-  --muted: oklch(0.955 0.008 80);
-  --muted-foreground: oklch(0.505 0.024 55);
-  --accent: oklch(0.93 0.024 30);
-  --accent-foreground: oklch(0.235 0.018 45);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.895 0.018 80);
-  --input: oklch(0.895 0.018 80);
-  --ring: oklch(0.68 0.098 78);
+  --background: oklch(0.17 0.008 55);
+  --foreground: oklch(0.95 0.012 85);
+  --card: oklch(0.215 0.01 55);
+  --card-foreground: oklch(0.95 0.012 85);
+  --popover: oklch(0.2 0.01 55);
+  --popover-foreground: oklch(0.95 0.012 85);
+  --primary: oklch(0.78 0.11 80);
+  --primary-foreground: oklch(0.18 0.01 55);
+  --secondary: oklch(0.3 0.02 45);
+  --secondary-foreground: oklch(0.95 0.012 85);
+  --muted: oklch(0.28 0.012 55);
+  --muted-foreground: oklch(0.75 0.022 78);
+  --accent: oklch(0.3 0.02 45);
+  --accent-foreground: oklch(0.95 0.012 85);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.003 250);
+  --border: oklch(0.42 0.03 75);
+  --input: oklch(0.42 0.03 75);
+  --ring: oklch(0.78 0.11 80);
 
   --gold-1: #bf953f;
   --gold-2: #fcf6ba;
@@ -221,10 +221,10 @@
 }
 
 @utility glass-card {
-  background: color-mix(in oklab, white 62%, transparent);
-  backdrop-filter: blur(16px) saturate(130%);
-  border: 1px solid color-mix(in oklab, #b38728 26%, transparent);
-  box-shadow: var(--shadow-soft);
+  background: color-mix(in oklab, #17130e 72%, transparent);
+  backdrop-filter: blur(18px) saturate(130%);
+  border: 1px solid color-mix(in oklab, #b38728 30%, transparent);
+  box-shadow: 0 26px 70px -34px rgba(0, 0, 0, 0.9);
   transition:
     transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.5s ease,
@@ -234,8 +234,10 @@
 @utility glass-card-hover {
   &:hover {
     transform: translateY(-8px);
-    border-color: color-mix(in oklab, #b38728 70%, transparent);
-    box-shadow: var(--shadow-gold);
+    border-color: color-mix(in oklab, #fcf6ba 55%, transparent);
+    box-shadow:
+      0 30px 80px -30px rgba(0, 0, 0, 0.95),
+      0 0 40px -12px rgba(191, 149, 63, 0.45);
   }
 }
 
@@ -392,6 +394,55 @@
   50% {
     transform: scale(1.12);
     opacity: 1;
+  }
+}
+
+/* Black-marble page base with pooled gold light. */
+@utility gold-cracks {
+  background-color: #0a0807;
+  background-image:
+    radial-gradient(135% 100% at 8% -12%, rgba(191, 149, 63, 0.14), transparent 55%),
+    radial-gradient(120% 95% at 100% 112%, rgba(170, 119, 28, 0.16), transparent 55%),
+    radial-gradient(90% 70% at 50% 40%, rgba(120, 92, 40, 0.08), transparent 60%),
+    linear-gradient(160deg, #16120d 0%, #0a0807 45%, #120f0b 75%, #070605 100%);
+}
+
+/* Branching gold cracks (kintsugi) rendered from layered SVG noise. */
+@utility cracks-layer {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006 0.013' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0.86  0 0 0 0 0.67  0 0 0 0 0.31  0 0 0 6.5 -2.35'/%3E%3C/filter%3E%3Crect width='700' height='700' filter='url(%23c)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='c2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.017 0.03' numOctaves='4' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.8  0 0 0 0 0.62  0 0 0 0 0.28  0 0 0 5 -1.9'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23c2)'/%3E%3C/svg%3E");
+  background-size:
+    780px 780px,
+    460px 460px;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  animation: veinDrift 60s linear infinite alternate;
+}
+
+/* Always-on rotating gold ring, for icon medallions. */
+@utility ring-gold {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from var(--gold-angle),
+      rgba(179, 135, 40, 0.15),
+      #fcf6ba,
+      #b38728,
+      #fff6cf,
+      #b38728,
+      rgba(179, 135, 40, 0.15)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: goldSpin 7s linear infinite;
   }
 }
 

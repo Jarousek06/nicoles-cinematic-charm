@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import marble from "@/assets/marble-bg.jpg";
 import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
 import iconCroissant from "@/assets/icon-croissant.png";
@@ -26,7 +25,7 @@ function Floating({
       aria-hidden
       width={640}
       height={640}
-      className={`pointer-events-none absolute select-none drop-shadow-[0_25px_35px_rgba(90,70,40,0.18)] ${className}`}
+      className={`pointer-events-none absolute select-none [filter:drop-shadow(0_18px_28px_rgba(0,0,0,0.55))_drop-shadow(0_0_26px_rgba(191,149,63,0.4))] ${className}`}
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1, y: [0, -18, 0], rotate: [-3, 3, -3] }}
       transition={{
@@ -52,21 +51,14 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[100svh] items-center justify-center overflow-hidden"
     >
-      <motion.div className="sheen absolute inset-[-10%]" style={{ y: bgY }}>
-        <img
-          src={marble}
-          alt=""
-          aria-hidden
-          width={1920}
-          height={1280}
-          className="h-full w-full object-cover"
-        />
+      <motion.div className="sheen gold-cracks absolute inset-[-10%]" style={{ y: bgY }}>
+        <div aria-hidden className="cracks-layer absolute inset-0" />
       </motion.div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.5),rgba(248,246,242,0.88))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(40,28,14,0.12),rgba(6,5,4,0.72))]" />
       {/* cinematic vignette */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(20,14,8,0.28))]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,rgba(0,0,0,0.6))]"
       />
       {/* pulsing gold aura behind the title */}
       <div
@@ -154,7 +146,7 @@ export function Hero() {
           </a>
           <a
             href="#kontakt"
-            className="w-full rounded-full border border-[#b38728]/50 bg-white/60 px-8 py-3.5 text-sm font-medium tracking-wide text-foreground backdrop-blur transition-all duration-300 hover:border-[#b38728] hover:bg-white/85 sm:w-auto"
+            className="w-full rounded-full border border-[#b38728]/50 bg-white/5 px-8 py-3.5 text-sm font-medium tracking-wide text-foreground backdrop-blur transition-all duration-300 hover:border-[#fcf6ba] hover:bg-white/10 sm:w-auto"
           >
             Kde nás najdete
           </a>
