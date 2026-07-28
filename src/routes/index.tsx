@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { Hero } from "@/components/nicole/Hero";
+import { Logo } from "@/components/nicole/Logo";
 import {
   About,
   Offer,
@@ -93,8 +94,8 @@ function Index() {
 
       <header className="fixed inset-x-0 top-0 z-40">
         <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between gap-6 rounded-full border border-[#c9a24b]/25 bg-white/55 px-5 py-2.5 backdrop-blur-xl sm:px-7">
-          <a href="#hero" className="gold-text font-display text-lg tracking-wide sm:text-xl">
-            Nicole&rsquo;s Coffee
+          <a href="#hero" aria-label="Nicole's Coffee — domů" className="shrink-0">
+            <Logo animated={false} className="h-9 sm:h-10" />
           </a>
           <nav className="hidden items-center gap-7 md:flex">
             {nav.map((n) => (

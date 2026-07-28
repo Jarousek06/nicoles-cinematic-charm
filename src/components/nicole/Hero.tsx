@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import marble from "@/assets/marble-bg.jpg";
-import logo from "@/assets/logo.jpg";
+import { Logo } from "./Logo";
 import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
 import iconCroissant from "@/assets/icon-croissant.png";
@@ -107,17 +107,6 @@ export function Hero() {
         style={{ y: contentY, opacity: fade }}
         className="relative z-10 mx-auto max-w-3xl px-6 text-center"
       >
-        <motion.img
-          src={logo}
-          alt="Cukrárna Nicole's Coffee"
-          width={480}
-          height={340}
-          className="mx-auto mb-6 w-44 mix-blend-multiply sm:w-52"
-          initial={{ opacity: 0, y: 10, scale: 0.94 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-        />
-
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,12 +117,13 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 24, scale: 0.96, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="shimmer-text mt-6 text-5xl leading-[1.05] sm:text-7xl lg:text-8xl"
+          className="mt-6"
         >
-          Nicole&rsquo;s Coffee
+          <Logo className="mx-auto h-52 drop-shadow-[0_14px_30px_rgba(150,110,40,0.35)] sm:h-64 lg:h-72" />
+          <span className="sr-only">Nicole&rsquo;s Coffee — Cukrárna a kavárna Štětí</span>
         </motion.h1>
 
         <motion.div
