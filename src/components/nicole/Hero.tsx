@@ -154,7 +154,7 @@ export function Hero() {
           </a>
           <a
             href="#kontakt"
-            className="w-full rounded-full border border-[#b38728]/50 bg-white/60 px-8 py-3.5 text-sm font-medium tracking-wide text-foreground backdrop-blur transition-all duration-300 hover:border-[#b38728] hover:bg-white/85 sm:w-auto"
+            className="w-full rounded-full border border-[#af9b61]/50 bg-white/60 px-8 py-3.5 text-sm font-medium tracking-wide text-foreground backdrop-blur transition-all duration-300 hover:border-[#af9b61] hover:bg-white/85 sm:w-auto"
           >
             Kde nás najdete
           </a>

@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { Hero } from "@/components/nicole/Hero";
-import { About, Offer, Quote, Gallery, Kids, Marquee, Reviews } from "@/components/nicole/Sections";
+import {
+  About,
+  Offer,
+  Menu,
+  Features,
+  Quote,
+  Gallery,
+  Kids,
+  Marquee,
+  Reviews,
+} from "@/components/nicole/Sections";
 import { Contact } from "@/components/nicole/Contact";
 import marble from "@/assets/marble-bg.jpg";
 
@@ -60,6 +70,7 @@ export const Route = createFileRoute("/")({
 const nav = [
   { href: "#o-nas", label: "O nás" },
   { href: "#nabidka", label: "Nabídka" },
+  { href: "#menu", label: "Menu" },
   { href: "#galerie", label: "Galerie" },
   { href: "#deti", label: "Pro děti" },
   { href: "#reference", label: "Reference" },
@@ -81,7 +92,7 @@ function Index() {
       <div aria-hidden className="grain-overlay" />
 
       <header className="fixed inset-x-0 top-0 z-40">
-        <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between gap-6 rounded-full border border-[#b38728]/25 bg-white/55 px-5 py-2.5 backdrop-blur-xl sm:px-7">
+        <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between gap-6 rounded-full border border-[#af9b61]/25 bg-white/55 px-5 py-2.5 backdrop-blur-xl sm:px-7">
           <a href="#hero" className="gold-text font-display text-lg tracking-wide sm:text-xl">
             Nicole&rsquo;s Coffee
           </a>
@@ -90,7 +101,7 @@ function Index() {
               <a
                 key={n.href}
                 href={n.href}
-                className="relative text-xs uppercase tracking-[0.18em] text-foreground/70 transition-colors hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#b38728] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                className="relative text-xs uppercase tracking-[0.18em] text-foreground/70 transition-colors hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#af9b61] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 {n.label}
               </a>
@@ -110,6 +121,8 @@ function Index() {
         <Marquee />
         <About />
         <Offer />
+        <Menu />
+        <Features />
         <Quote />
         <Gallery />
         <Kids />
@@ -117,7 +130,7 @@ function Index() {
         <Contact />
       </main>
 
-      <footer className="tufted-velvet sheen relative mt-16 overflow-hidden border-t-2 border-[#b38728]/45">
+      <footer className="tufted-velvet sheen relative mt-16 overflow-hidden border-t-2 border-[#af9b61]/45">
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 text-center">
           <p className="gold-text font-display text-3xl">Nicole&rsquo;s Coffee</p>
           <div className="gold-rule mx-auto mt-6 max-w-[10rem]" />

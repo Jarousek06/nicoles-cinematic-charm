@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Coffee, CakeSlice, Baby, Sparkles } from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
 import aboutImg from "@/assets/about-cafe.jpg";
 import kidsImg from "@/assets/kids.jpg";
@@ -38,7 +39,7 @@ export function About() {
             {["Výběrová káva", "Domácí zákusky", "Dětský koutek", "Rodinná atmosféra"].map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-[#b38728]/35 bg-white/70 px-4 py-1.5 text-xs tracking-wide text-foreground/80 backdrop-blur"
+                className="rounded-full border border-[#af9b61]/35 bg-white/70 px-4 py-1.5 text-xs tracking-wide text-foreground/80 backdrop-blur"
               >
                 {t}
               </span>
@@ -143,6 +144,140 @@ export function Offer() {
   );
 }
 
+const menu = [
+  {
+    group: "Káva",
+    note: "Vždy čerstvě namletá výběrová zrna.",
+    items: [
+      { n: "Espresso", p: "55 Kč" },
+      { n: "Cappuccino", p: "69 Kč" },
+      { n: "Caffè latte", p: "75 Kč" },
+      { n: "Flat white", p: "79 Kč" },
+      { n: "Horká čokoláda", p: "75 Kč" },
+      { n: "Matcha latte", p: "85 Kč" },
+    ],
+  },
+  {
+    group: "Zákusky & dorty",
+    note: "Denně čerstvá vitrína, dorty na objednávku.",
+    items: [
+      { n: "Zákusek z vitríny", p: "od 49 Kč" },
+      { n: "Cheesecake", p: "79 Kč" },
+      { n: "Dort na objednávku", p: "dle domluvy" },
+    ],
+  },
+  {
+    group: "Slané",
+    note: "Když máte chuť na něco pořádného.",
+    items: [
+      { n: "Pizza", p: "od 149 Kč" },
+      { n: "Panini", p: "od 89 Kč" },
+    ],
+  },
+  {
+    group: "Nápoje",
+    note: "Domácí a osvěžující.",
+    items: [
+      { n: "Domácí limonáda", p: "69 Kč" },
+      { n: "Čerstvý džus", p: "59 Kč" },
+      { n: "Čaj", p: "49 Kč" },
+    ],
+  },
+];
+
+export function Menu() {
+  return (
+    <section id="menu" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionTitle
+          eyebrow="Menu"
+          title="Náš ceník"
+          subtitle="Výběr z toho, co u nás najdete. Kompletní nabídku rádi ukážeme na místě."
+        />
+        <div className="mt-16 space-y-14">
+          {menu.map((g, gi) => (
+            <Reveal key={g.group} delay={gi * 0.05}>
+              <div>
+                <div className="mb-6">
+                  <h3 className="gold-text font-display text-2xl sm:text-3xl">{g.group}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{g.note}</p>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {g.items.map((it) => (
+                    <article
+                      key={it.n}
+                      className="rounded-2xl border border-[#af9b61]/25 bg-[#f6f1ea] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#af9b61]/60 hover:shadow-[0_16px_40px_-24px_rgba(58,32,21,0.5)]"
+                    >
+                      <div className="flex items-baseline justify-between gap-4">
+                        <h4 className="text-base font-medium text-[#3a2015]">{it.n}</h4>
+                        <span className="whitespace-nowrap font-semibold text-[#96803f]">{it.p}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const features = [
+  {
+    Icon: Coffee,
+    title: "Denně čerstvé",
+    desc: "Vitrína plná čerstvých zákusků a čerstvě pražená káva každý den.",
+  },
+  {
+    Icon: CakeSlice,
+    title: "Domácí receptury",
+    desc: "Pečeme poctivě, s láskou a z kvalitních surovin.",
+  },
+  {
+    Icon: Sparkles,
+    title: "Dorty na míru",
+    desc: "Na oslavy, svatby i narozeniny — přesně podle vaší představy.",
+  },
+  {
+    Icon: Baby,
+    title: "Dětský koutek",
+    desc: "Rodinná atmosféra a koutek, kde je dětem dobře.",
+  },
+];
+
+export function Features() {
+  return (
+    <section className="relative px-6 py-6">
+      <div className="espresso-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-[#af9b61]/30 px-8 py-16 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.6)] sm:py-20">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#c9b57a]">
+            Proč k nám
+          </p>
+          <h2 className="gold-text font-display text-4xl leading-tight sm:text-5xl">
+            Naše přednosti
+          </h2>
+          <div className="gold-rule mx-auto mt-6 max-w-[8rem]" />
+        </Reveal>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f, i) => (
+            <Reveal key={f.title} delay={i * 0.1}>
+              <div className="h-full rounded-2xl border border-[#af9b61]/20 bg-[#2a1710]/70 p-7 text-center backdrop-blur">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#af9b61]/50 bg-[#3a2015]">
+                  <f.Icon className="h-6 w-6 text-[#c9b57a]" aria-hidden />
+                </span>
+                <h3 className="mt-5 font-display text-xl text-[#f4ead0]">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#d8c5aa]">{f.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const marqueeItems = [
   "Výběrová káva",
   "Domácí zákusky",
@@ -155,12 +290,12 @@ const marqueeItems = [
 export function Marquee() {
   const row = [...marqueeItems, ...marqueeItems];
   return (
-    <div className="tufted-velvet relative overflow-hidden border-y-2 border-[#b38728]/40 py-5">
+    <div className="tufted-velvet relative overflow-hidden border-y-2 border-[#af9b61]/40 py-5">
       <div className="marquee-track flex w-max items-center whitespace-nowrap">
         {row.map((t, i) => (
           <span key={i} className="flex items-center">
             <span className="font-display text-lg tracking-wide text-[#f4ead0] sm:text-xl">{t}</span>
-            <span className="mx-8 text-[#b38728]">✦</span>
+            <span className="mx-8 text-[#af9b61]">✦</span>
           </span>
         ))}
       </div>
@@ -200,7 +335,7 @@ export function Reviews() {
                 >
                   &rdquo;
                 </span>
-                <div className="flex gap-1 text-[#b38728]" aria-label="Hodnocení 5 z 5">
+                <div className="flex gap-1 text-[#af9b61]" aria-label="Hodnocení 5 z 5">
                   {"★★★★★".split("").map((s, j) => (
                     <span key={j}>{s}</span>
                   ))}
@@ -223,7 +358,7 @@ export function Reviews() {
 export function Quote() {
   return (
     <section className="relative px-6 py-10">
-      <div className="tufted-velvet sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border-2 border-[#b38728]/45 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
+      <div className="tufted-velvet sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border-2 border-[#af9b61]/45 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
         <Reveal>
           <p className="text-[0.7rem] uppercase tracking-[0.45em] text-[#e9d9a8]/70">
             Nicole&rsquo;s Coffee
@@ -263,7 +398,7 @@ export function Gallery() {
         <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
           {gallery.map((g, i) => (
             <Reveal key={i} delay={(i % 3) * 0.1}>
-              <figure className="group relative overflow-hidden rounded-[1.3rem] border border-[#b38728]/25 shadow-[0_20px_50px_-30px_rgba(43,35,32,0.6)]">
+              <figure className="group relative overflow-hidden rounded-[1.3rem] border border-[#af9b61]/25 shadow-[0_20px_50px_-30px_rgba(43,35,32,0.6)]">
                 <img
                   src={g.src}
                   alt={g.alt}
