@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
 import { Coffee, CakeSlice, Baby, Sparkles } from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
-import aboutImg from "@/assets/about-cafe.jpg";
+import platter from "@/assets/platter.jpg";
+import venecky from "@/assets/venecky.jpg";
+import pistachio from "@/assets/pistachio.jpg";
+import cakeFrozen from "@/assets/cake-frozen.jpg";
+import cakeMinecraft from "@/assets/cake-minecraft.jpg";
+import miniPassion from "@/assets/mini-passion.jpg";
+import miniBlueberry from "@/assets/mini-blueberry.jpg";
+import miniCacao from "@/assets/mini-cacao.jpg";
+import juice from "@/assets/juice.jpg";
+import burgers from "@/assets/burgers.jpg";
+import croissants from "@/assets/croissants.jpg";
 import kidsImg from "@/assets/kids.jpg";
-import gal1 from "@/assets/gal-1.jpg";
-import gal2 from "@/assets/gal-2.jpg";
-import gal3 from "@/assets/gal-3.jpg";
-import gal4 from "@/assets/gal-4.jpg";
-import gal5 from "@/assets/gal-5.jpg";
 import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
 import iconCroissant from "@/assets/icon-croissant.png";
@@ -52,8 +57,8 @@ export function About() {
             <div className="gold-fill absolute -inset-[3px] rounded-[1.6rem] opacity-80 blur-[1px]" />
             <div className="relative overflow-hidden rounded-[1.5rem] bg-card">
               <motion.img
-                src={aboutImg}
-                alt="Interiér kavárny Nicole's Coffee s mramorovým pultem a zlatými detaily"
+                src={platter}
+                alt="Talíř plný zákusků a dezertů Nicole's Coffee pod zlatým nápisem"
                 loading="lazy"
                 width={1200}
                 height={1408}
@@ -146,41 +151,56 @@ export function Offer() {
 
 const menu = [
   {
-    group: "Káva",
-    note: "Vždy čerstvě namletá výběrová zrna.",
+    group: "Zákusky & dezerty",
+    note: "Denně čerstvá vitrína plná domácích dobrot.",
+    items: [
+      { n: "Věneček", p: "od 45 Kč" },
+      { n: "Pistáciový řez", p: "69 Kč" },
+      { n: "Ovocný košíček", p: "49 Kč" },
+      { n: "Mini dezert (dle nabídky)", p: "55 Kč" },
+      { n: "Punčový řez / kremrole", p: "od 39 Kč" },
+      { n: "Cheesecake", p: "69 Kč" },
+    ],
+  },
+  {
+    group: "Dorty na objednávku",
+    note: "Dětské motivy, oslavy i svatby — přesně podle vás.",
+    items: [
+      { n: "Dětský motivový dort (Frozen, Minecraft…)", p: "dle domluvy" },
+      { n: "Patrový / svatební dort", p: "dle domluvy" },
+      { n: "Dort dle vaší fotky", p: "dle domluvy" },
+    ],
+  },
+  {
+    group: "Káva & nápoje",
+    note: "Výběrová káva a čerstvé ovocné fresh.",
     items: [
       { n: "Espresso", p: "55 Kč" },
       { n: "Cappuccino", p: "69 Kč" },
       { n: "Caffè latte", p: "75 Kč" },
-      { n: "Flat white", p: "79 Kč" },
+      { n: "Čerstvý fresh / smoothie", p: "od 69 Kč" },
+      { n: "Domácí limonáda", p: "69 Kč" },
       { n: "Horká čokoláda", p: "75 Kč" },
-      { n: "Matcha latte", p: "85 Kč" },
-    ],
-  },
-  {
-    group: "Zákusky & dorty",
-    note: "Denně čerstvá vitrína, dorty na objednávku.",
-    items: [
-      { n: "Zákusek z vitríny", p: "od 49 Kč" },
-      { n: "Cheesecake", p: "79 Kč" },
-      { n: "Dort na objednávku", p: "dle domluvy" },
     ],
   },
   {
     group: "Slané",
     note: "Když máte chuť na něco pořádného.",
     items: [
+      { n: "Plněný croissant", p: "od 69 Kč" },
+      { n: "Burger", p: "od 129 Kč" },
+      { n: "Toastík se šunkou a sýrem", p: "od 45 Kč" },
+      { n: "Párek v rohlíku", p: "45 Kč" },
       { n: "Pizza", p: "od 149 Kč" },
-      { n: "Panini", p: "od 89 Kč" },
     ],
   },
   {
-    group: "Nápoje",
-    note: "Domácí a osvěžující.",
+    group: "Alkohol",
+    note: "Na oslavu i příjemné posezení.",
     items: [
-      { n: "Domácí limonáda", p: "69 Kč" },
-      { n: "Čerstvý džus", p: "59 Kč" },
-      { n: "Čaj", p: "49 Kč" },
+      { n: "Aperol Spritz", p: "od 115 Kč" },
+      { n: "Prosecco", p: "dle nabídky" },
+      { n: "Víno (bílé / červené)", p: "dle nabídky" },
     ],
   },
 ];
@@ -378,12 +398,16 @@ export function Quote() {
 }
 
 const gallery = [
-  { src: gal2, alt: "Patrový dort se zlatými perlami na mramorovém stojanu", h: "h-[30rem]" },
-  { src: gal1, alt: "Šálek kávy s latte art na mramorovém stolku", h: "h-[22rem]" },
-  { src: gal4, alt: "Vitrína plná barevných zákusků a věnečků", h: "h-[26rem]" },
-  { src: gal3, alt: "Křupavá pizza margherita na mramorovém stole", h: "h-[20rem]" },
-  { src: gal5, alt: "Slavnostní dort se zlatým zdobením a růžemi", h: "h-[28rem]" },
-  { src: gal1, alt: "Detail kávy servírované ve skleněném šálku", h: "h-[24rem]" },
+  { src: venecky, alt: "Domácí věnečky s karamelovou polevou a šlehačkou", h: "h-[30rem]" },
+  { src: juice, alt: "Čerstvé ovocné fresh nápoje na mramorovém stolku", h: "h-[24rem]" },
+  { src: pistachio, alt: "Pistáciový řez s růžovými plátky a šlehačkou", h: "h-[26rem]" },
+  { src: cakeFrozen, alt: "Dětský dort s ledovou princeznou na objednávku", h: "h-[32rem]" },
+  { src: croissants, alt: "Plněné croissanty se šunkou, sýrem a zeleninou", h: "h-[22rem]" },
+  { src: miniPassion, alt: "Mini dezerty s marakujou a malinou", h: "h-[24rem]" },
+  { src: cakeMinecraft, alt: "Dětský dort s motivem Minecraft na objednávku", h: "h-[30rem]" },
+  { src: miniBlueberry, alt: "Borůvkový řez s čokoládovým dekorem", h: "h-[22rem]" },
+  { src: miniCacao, alt: "Čokoládový 70% dezert se zrcadlovou polevou", h: "h-[20rem]" },
+  { src: burgers, alt: "Domácí burgery v sezamových houskách", h: "h-[26rem]" },
 ];
 
 export function Gallery() {

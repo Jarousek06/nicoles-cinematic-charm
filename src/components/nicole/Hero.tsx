@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import marble from "@/assets/marble-bg.jpg";
+import logo from "@/assets/logo.jpg";
 import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
 import iconCroissant from "@/assets/icon-croissant.png";
@@ -106,6 +107,17 @@ export function Hero() {
         style={{ y: contentY, opacity: fade }}
         className="relative z-10 mx-auto max-w-3xl px-6 text-center"
       >
+        <motion.img
+          src={logo}
+          alt="Cukrárna Nicole's Coffee"
+          width={480}
+          height={340}
+          className="mx-auto mb-6 w-44 mix-blend-multiply sm:w-52"
+          initial={{ opacity: 0, y: 10, scale: 0.94 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+        />
+
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
