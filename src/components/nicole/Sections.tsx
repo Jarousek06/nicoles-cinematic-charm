@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Coffee, CakeSlice, Baby, Sparkles } from "lucide-react";
+import { Coffee, CakeSlice, Baby, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
 import platter from "@/assets/platter.jpg";
 import venecky from "@/assets/venecky.jpg";
@@ -411,29 +412,100 @@ const gallery = [
 ];
 
 export function Gallery() {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const n = gallery.length;
+
+  const go = (d: number) => setIndex((p) => (p + d + n) % n);
+  const jump = (i: number) => setIndex(i);
+
+  useEffect(() => {
+    if (paused) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+      return;
+    const t = setInterval(() => setIndex((p) => (p + 1) % n), 4500);
+    return () => clearInterval(t);
+  }, [paused, n]);
+
+  const current = gallery[index];
+
   return (
     <section id="galerie" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <SectionTitle
           eyebrow="Galerie"
           title="Chvíle u nás"
-          subtitle="Fotografie z kavárny, vitríny a dortů, které od nás odcházejí."
+          subtitle="Zákusky, dorty a dobroty, které od nás odcházejí."
         />
-        <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
-          {gallery.map((g, i) => (
-            <Reveal key={i} delay={(i % 3) * 0.1}>
-              <figure className="group relative overflow-hidden rounded-[1.3rem] border border-[#c9a24b]/25 shadow-[0_20px_50px_-30px_rgba(43,35,32,0.6)]">
+
+        <Reveal>
+          <div
+            className="group relative mx-auto mt-16 max-w-4xl"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[1.6rem] border-2 border-[#c9a24b]/40 bg-card shadow-[0_40px_90px_-40px_rgba(43,35,32,0.7)]">
+              {gallery.map((g, i) => (
                 <img
+                  key={i}
                   src={g.src}
                   alt={g.alt}
-                  loading="lazy"
-                  className={`w-full ${g.h} object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110`}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  className="absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  style={{
+                    opacity: i === index ? 1 : 0,
+                    transform: i === index ? "scale(1)" : "scale(1.06)",
+                  }}
                 />
-                <span className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[linear-gradient(to_top,rgba(43,35,32,0.35),transparent_55%)]" />
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+              ))}
+
+              <span className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(to_top,rgba(20,14,8,0.55),transparent_45%)]" />
+
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
+                <p
+                  key={index}
+                  className="font-display text-lg text-[#f6ead1] duration-700 animate-in fade-in slide-in-from-bottom-2 sm:text-xl"
+                >
+                  {current.alt}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                aria-label="Předchozí"
+                onClick={() => go(-1)}
+                className="absolute left-3 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-[#c9a24b]/50 bg-black/35 text-[#f0dc9a] backdrop-blur transition-all hover:bg-black/55 hover:text-white sm:left-5"
+              >
+                <ChevronLeft className="h-5 w-5" aria-hidden />
+              </button>
+              <button
+                type="button"
+                aria-label="Další"
+                onClick={() => go(1)}
+                className="absolute right-3 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-[#c9a24b]/50 bg-black/35 text-[#f0dc9a] backdrop-blur transition-all hover:bg-black/55 hover:text-white sm:right-5"
+              >
+                <ChevronRight className="h-5 w-5" aria-hidden />
+              </button>
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+              {gallery.map((g, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Zobrazit: ${g.alt}`}
+                  aria-current={i === index}
+                  onClick={() => jump(i)}
+                  className={`h-2.5 rounded-full transition-all duration-500 ${
+                    i === index
+                      ? "w-8 bg-gradient-to-r from-[#c9a24b] to-[#f0dc9a]"
+                      : "w-2.5 bg-[#c9a24b]/35 hover:bg-[#c9a24b]/60"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
