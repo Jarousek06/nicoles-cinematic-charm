@@ -39,7 +39,7 @@ export function About() {
             {["Výběrová káva", "Domácí zákusky", "Dětský koutek", "Rodinná atmosféra"].map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-[#af9b61]/35 bg-white/70 px-4 py-1.5 text-xs tracking-wide text-foreground/80 backdrop-blur"
+                className="rounded-full border border-[#c9a24b]/35 bg-white/70 px-4 py-1.5 text-xs tracking-wide text-foreground/80 backdrop-blur"
               >
                 {t}
               </span>
@@ -206,7 +206,7 @@ export function Menu() {
                   {g.items.map((it) => (
                     <article
                       key={it.n}
-                      className="rounded-2xl border border-[#af9b61]/25 bg-[#f6f1ea] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#af9b61]/60 hover:shadow-[0_16px_40px_-24px_rgba(58,32,21,0.5)]"
+                      className="rounded-2xl border border-[#c9a24b]/25 bg-[#f6f1ea] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#c9a24b]/60 hover:shadow-[0_16px_40px_-24px_rgba(58,32,21,0.5)]"
                     >
                       <div className="flex items-baseline justify-between gap-4">
                         <h4 className="text-base font-medium text-[#3a2015]">{it.n}</h4>
@@ -250,12 +250,12 @@ const features = [
 export function Features() {
   return (
     <section className="relative px-6 py-6">
-      <div className="espresso-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-[#af9b61]/30 px-8 py-16 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.6)] sm:py-20">
+      <div className="warm-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-[#c9a24b]/40 px-8 py-16 shadow-[0_40px_90px_-40px_rgba(58,40,25,0.5)] sm:py-20">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#c9b57a]">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#6b4f28]">
             Proč k nám
           </p>
-          <h2 className="gold-text font-display text-4xl leading-tight sm:text-5xl">
+          <h2 className="font-display text-4xl leading-tight text-[#2b2018] sm:text-5xl">
             Naše přednosti
           </h2>
           <div className="gold-rule mx-auto mt-6 max-w-[8rem]" />
@@ -263,12 +263,12 @@ export function Features() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.1}>
-              <div className="h-full rounded-2xl border border-[#af9b61]/20 bg-[#2a1710]/70 p-7 text-center backdrop-blur">
-                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#af9b61]/50 bg-[#3a2015]">
-                  <f.Icon className="h-6 w-6 text-[#c9b57a]" aria-hidden />
+              <div className="h-full rounded-2xl border border-[#c9a24b]/30 bg-white/85 p-7 text-center shadow-[0_16px_34px_-20px_rgba(58,40,25,0.4)] backdrop-blur">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-[#c9a24b]/50 bg-[#fdfbf7]">
+                  <f.Icon className="h-6 w-6 text-[#b07d1e]" aria-hidden />
                 </span>
-                <h3 className="mt-5 font-display text-xl text-[#f4ead0]">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#d8c5aa]">{f.desc}</p>
+                <h3 className="mt-5 font-display text-xl text-[#2b2320]">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#5c4a38]">{f.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -290,12 +290,12 @@ const marqueeItems = [
 export function Marquee() {
   const row = [...marqueeItems, ...marqueeItems];
   return (
-    <div className="tufted-velvet relative overflow-hidden border-y-2 border-[#af9b61]/40 py-5">
+    <div className="tufted-velvet relative overflow-hidden border-y-2 border-[#c9a24b]/40 py-5">
       <div className="marquee-track flex w-max items-center whitespace-nowrap">
         {row.map((t, i) => (
           <span key={i} className="flex items-center">
             <span className="font-display text-lg tracking-wide text-[#f4ead0] sm:text-xl">{t}</span>
-            <span className="mx-8 text-[#af9b61]">✦</span>
+            <span className="mx-8 text-[#c9a24b]">✦</span>
           </span>
         ))}
       </div>
@@ -335,7 +335,7 @@ export function Reviews() {
                 >
                   &rdquo;
                 </span>
-                <div className="flex gap-1 text-[#af9b61]" aria-label="Hodnocení 5 z 5">
+                <div className="flex gap-1 text-[#c9a24b]" aria-label="Hodnocení 5 z 5">
                   {"★★★★★".split("").map((s, j) => (
                     <span key={j}>{s}</span>
                   ))}
@@ -358,7 +358,7 @@ export function Reviews() {
 export function Quote() {
   return (
     <section className="relative px-6 py-10">
-      <div className="tufted-velvet sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border-2 border-[#af9b61]/45 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
+      <div className="tufted-velvet sheen relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border-2 border-[#c9a24b]/45 px-8 py-20 text-center shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] sm:py-28">
         <Reveal>
           <p className="text-[0.7rem] uppercase tracking-[0.45em] text-[#e9d9a8]/70">
             Nicole&rsquo;s Coffee
@@ -398,7 +398,7 @@ export function Gallery() {
         <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
           {gallery.map((g, i) => (
             <Reveal key={i} delay={(i % 3) * 0.1}>
-              <figure className="group relative overflow-hidden rounded-[1.3rem] border border-[#af9b61]/25 shadow-[0_20px_50px_-30px_rgba(43,35,32,0.6)]">
+              <figure className="group relative overflow-hidden rounded-[1.3rem] border border-[#c9a24b]/25 shadow-[0_20px_50px_-30px_rgba(43,35,32,0.6)]">
                 <img
                   src={g.src}
                   alt={g.alt}

@@ -83,14 +83,14 @@
   --input: oklch(0.895 0.018 80);
   --ring: oklch(0.68 0.098 78);
 
-  --gold-1: #9a7d3f;
-  --gold-2: #d9c98d;
-  --gold-3: #af9b61;
-  --gold-4: #c9b57a;
-  --gold-5: #86673a;
-  --espresso: #3a2015;
-  --espresso-2: #4a2a19;
-  --cream: #eaddc8;
+  --gold-1: #a67c2e;
+  --gold-2: #f0dc9a;
+  --gold-3: #c9a24b;
+  --gold-4: #eccf84;
+  --gold-5: #96702a;
+  --taupe: #b5987a;
+  --taupe-2: #a98b6c;
+  --cream: #f6f1ea;
   --gradient-gold: linear-gradient(
     135deg,
     var(--gold-1),
@@ -101,7 +101,7 @@
   );
   --blush: oklch(0.918 0.026 32);
   --shadow-soft: 0 20px 60px -25px color-mix(in oklab, var(--foreground) 30%, transparent);
-  --shadow-gold: 0 18px 50px -18px color-mix(in oklab, #af9b61 45%, transparent);
+  --shadow-gold: 0 18px 50px -18px color-mix(in oklab, #c9a24b 45%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -200,7 +200,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, #af9b61 65%, transparent),
+    color-mix(in oklab, #c9a24b 65%, transparent),
     transparent
   );
 }
@@ -208,13 +208,13 @@
 @utility shimmer-text {
   background-image: linear-gradient(
     100deg,
-    #86673a 0%,
-    #af9b61 25%,
-    #d9c98d 45%,
-    #efe4bf 50%,
-    #d9c98d 55%,
-    #af9b61 75%,
-    #86673a 100%
+    #96702a 0%,
+    #c9a24b 25%,
+    #f0dc9a 45%,
+    #fff6dc 50%,
+    #f0dc9a 55%,
+    #c9a24b 75%,
+    #96702a 100%
   );
   background-size: 250% 100%;
   background-clip: text;
@@ -226,7 +226,7 @@
 @utility glass-card {
   background: color-mix(in oklab, white 62%, transparent);
   backdrop-filter: blur(16px) saturate(130%);
-  border: 1px solid color-mix(in oklab, #af9b61 26%, transparent);
+  border: 1px solid color-mix(in oklab, #c9a24b 26%, transparent);
   box-shadow: var(--shadow-soft);
   transition:
     transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -237,7 +237,7 @@
 @utility glass-card-hover {
   &:hover {
     transform: translateY(-8px);
-    border-color: color-mix(in oklab, #af9b61 70%, transparent);
+    border-color: color-mix(in oklab, #c9a24b 70%, transparent);
     box-shadow: var(--shadow-gold);
   }
 }
@@ -331,9 +331,9 @@
     background: conic-gradient(
       from var(--gold-angle),
       transparent 0 18%,
-      #d9c98d 32%,
-      #af9b61 50%,
-      #d9c98d 68%,
+      #f0dc9a 32%,
+      #c9a24b 50%,
+      #f0dc9a 68%,
       transparent 82% 100%
     );
     -webkit-mask:
@@ -354,8 +354,8 @@
 @utility gold-aura {
   background: radial-gradient(
     closest-side,
-    rgba(217, 201, 141, 0.5),
-    rgba(175, 155, 97, 0.3) 45%,
+    rgba(240, 220, 154, 0.55),
+    rgba(201, 162, 75, 0.3) 45%,
     transparent 72%
   );
   filter: blur(30px);
@@ -400,14 +400,14 @@
 
 /* Button-tufted velvet (capitonné) — matches the café's black velvet chairs:
    puffed diamonds with subtle gilded buttons. */
-@utility espresso-panel {
-  background-color: #3a2015;
-  background-image: linear-gradient(160deg, #4a2a19 0%, #31170d 55%, #3d1f12 100%);
-  color: #eaddc8;
+@utility warm-panel {
+  background-color: #b5987a;
+  background-image: linear-gradient(160deg, #c3a888 0%, #a98b6c 55%, #b89a7c 100%);
+  color: #2b2320;
 }
 
 @utility tufted-velvet {
-  background-color: #34190f;
+  background-color: #16110e;
   background-image:
     /* gilded button dimples on a diamond lattice (two staggered grids) */
     radial-gradient(

@@ -32,7 +32,7 @@ export function Contact() {
           <Reveal>
             <div className="glass-card glass-card-hover h-full rounded-[1.4rem] p-8 sm:p-10">
               <div className="flex items-start gap-4">
-                <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#af9b61]" aria-hidden />
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#c9a24b]" aria-hidden />
                 <div>
                   <h3 className="text-xl">Adresa</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ export function Contact() {
               <div className="gold-rule my-8" />
 
               <div className="flex items-start gap-4">
-                <Clock className="mt-1 h-5 w-5 shrink-0 text-[#af9b61]" aria-hidden />
+                <Clock className="mt-1 h-5 w-5 shrink-0 text-[#c9a24b]" aria-hidden />
                 <div className="w-full">
                   <h3 className="text-xl">Otevírací doba</h3>
                   <dl className="mt-3 space-y-2 text-sm">
@@ -67,7 +67,7 @@ export function Contact() {
                   href="https://www.facebook.com/profile.php?id=61576350980109"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#af9b61]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#af9b61] hover:bg-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#c9a24b]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#c9a24b] hover:bg-white"
                 >
                   <Facebook className="h-4 w-4" aria-hidden /> Facebook
                 </a>
@@ -75,13 +75,13 @@ export function Contact() {
                   href="https://www.firmy.cz/detail/13941981-nicole-s-coffee-steti.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#af9b61]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#af9b61] hover:bg-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#c9a24b]/40 bg-white/70 px-5 py-2.5 text-sm transition-colors hover:border-[#c9a24b] hover:bg-white"
                 >
                   <Globe className="h-4 w-4" aria-hidden /> Firmy.cz
                 </a>
               </div>
 
-              <div className="mt-8 overflow-hidden rounded-[1rem] border border-[#af9b61]/30">
+              <div className="mt-8 overflow-hidden rounded-[1rem] border border-[#c9a24b]/30">
                 <iframe
                   title="Mapa – Nicole's Coffee, Viničná 692, Štětí"
                   src="https://maps.google.com/maps?q=Vini%C4%8Dn%C3%A1%20692%2C%20411%2008%20%C5%A0t%C4%9Bt%C3%AD&z=16&output=embed"
@@ -112,7 +112,7 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="mt-2 w-full rounded-xl border border-[#af9b61]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#af9b61] focus:ring-2 focus:ring-[#af9b61]/25"
+                    className="mt-2 w-full rounded-xl border border-[#c9a24b]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#c9a24b] focus:ring-2 focus:ring-[#c9a24b]/25"
                   />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export function Contact() {
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full rounded-xl border border-[#af9b61]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#af9b61] focus:ring-2 focus:ring-[#af9b61]/25"
+                    className="mt-2 w-full rounded-xl border border-[#c9a24b]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#c9a24b] focus:ring-2 focus:ring-[#c9a24b]/25"
                   />
                 </div>
                 <div>
@@ -136,7 +136,7 @@ export function Contact() {
                     name="message"
                     rows={5}
                     required
-                    className="mt-2 w-full resize-none rounded-xl border border-[#af9b61]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#af9b61] focus:ring-2 focus:ring-[#af9b61]/25"
+                    className="mt-2 w-full resize-none rounded-xl border border-[#c9a24b]/30 bg-white/70 px-4 py-3 text-sm outline-none transition-all focus:border-[#c9a24b] focus:ring-2 focus:ring-[#c9a24b]/25"
                   />
                 </div>
               </div>
