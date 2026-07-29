@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="cheese" x1="200" y1="240" x2="360" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE28C"/>
+      <stop offset="0.5" stop-color="#F7C24E"/>
+      <stop offset="1" stop-color="#E8A430"/>
+    </linearGradient>
+    <linearGradient id="crust" x1="140" y1="210" x2="500" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EDB874"/>
+      <stop offset="1" stop-color="#CB8536"/>
+    </linearGradient>
+    <radialGradient id="pep" cx="0.38" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#EC6248"/>
+      <stop offset="0.7" stop-color="#CE3A26"/>
+      <stop offset="1" stop-color="#A62518"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- drop shadow -->
+  <ellipse cx="322" cy="560" rx="150" ry="28" fill="#6E4E22" opacity="0.20" filter="url(#soft)"/>
+
+  <!-- cheese slice body -->
+  <path d="M138 274 Q320 234 502 274 L346 542 Q320 570 294 542 Z" fill="url(#cheese)"/>
+
+  <!-- warm inner shading near the tip -->
+  <path d="M300 470 Q320 540 340 470 L346 542 Q320 570 294 542 Z" fill="#DF9A2C" opacity="0.45"/>
+
+  <!-- sauce peek under the crust -->
+  <path d="M152 272 Q320 236 490 272" stroke="#DC6C34" stroke-width="11" stroke-linecap="round" fill="none" opacity="0.75"/>
+
+  <!-- crust (rounded, 3D-ish) -->
+  <path d="M140 266 Q320 214 500 266" stroke="url(#crust)" stroke-width="54" stroke-linecap="round" fill="none"/>
+  <path d="M152 252 Q320 208 488 252" stroke="#F6D9A2" stroke-width="15" stroke-linecap="round" fill="none" opacity="0.65"/>
+
+  <!-- pepperoni -->
+  <g>
+    <circle cx="248" cy="336" r="31" fill="url(#pep)"/>
+    <ellipse cx="238" cy="326" rx="11" ry="7" fill="#FF9A7E" opacity="0.55"/>
+    <circle cx="392" cy="322" r="28" fill="url(#pep)"/>
+    <ellipse cx="383" cy="313" rx="10" ry="6" fill="#FF9A7E" opacity="0.55"/>
+    <circle cx="322" cy="436" r="30" fill="url(#pep)"/>
+    <ellipse cx="313" cy="427" rx="10" ry="6" fill="#FF9A7E" opacity="0.55"/>
+  </g>
+
+  <!-- basil bits -->
+  <g fill="#4E9A3E">
+    <ellipse cx="316" cy="330" rx="12" ry="7" transform="rotate(-24 316 330)"/>
+    <ellipse cx="196" cy="404" rx="11" ry="6" transform="rotate(18 196 404)"/>
+    <ellipse cx="388" cy="404" rx="10" ry="6" transform="rotate(-14 388 404)"/>
+  </g>
+
+  <!-- glossy specular highlight over the cheese -->
+  <ellipse cx="258" cy="322" rx="120" ry="58" fill="#FFFFFF" opacity="0.10" filter="url(#soft)"/>
+</svg>

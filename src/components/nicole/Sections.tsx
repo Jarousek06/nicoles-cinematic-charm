@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Coffee,
-  CakeSlice,
-  Baby,
-  Sparkles,
-  ChevronLeft,
-  ChevronRight,
-  Pizza,
-  type LucideIcon,
-} from "lucide-react";
+import { Coffee, CakeSlice, Baby, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
 import platter from "@/assets/platter.jpg";
 import venecky from "@/assets/venecky.jpg";
@@ -25,8 +16,8 @@ import croissants from "@/assets/croissants.jpg";
 import kidsImg from "@/assets/kids.jpg";
 import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
-import iconCroissant from "@/assets/icon-croissant.png";
 import iconMacaron from "@/assets/icon-macaron.png";
+import iconPizza from "@/assets/icon-pizza.svg";
 
 export function About() {
   return (
@@ -86,29 +77,29 @@ export function About() {
   );
 }
 
-const offer: { icon?: string; Icon?: LucideIcon; title: string; desc: string }[] = [
+const offer = [
   {
     icon: iconCoffee,
     title: "Káva",
     desc: "Espresso, cappuccino, filtr i ledové varianty. Vždy čerstvě namleto.",
   },
   {
-    icon: iconCake,
+    icon: iconMacaron,
     title: "Sladké zákusky",
     desc: "Denně čerstvá vitrína plná řezů, věnečků, cheesecaků a dezertů.",
   },
   {
-    icon: iconMacaron,
+    icon: iconCake,
     title: "Dorty na objednávku",
     desc: "Narozeniny, svatby, oslavy. Podle vaší představy, do posledního detailu.",
   },
   {
-    Icon: Pizza,
+    icon: iconPizza,
     title: "Pizza & slané",
     desc: "Když máte chuť na něco pořádného. Křupavé těsto, poctivé suroviny.",
   },
   {
-    icon: iconCake,
+    icon: iconMacaron,
     title: "Něco pro děti",
     desc: "Malé porce, dětské nápoje a koutek, kde je jim dobře.",
   },
@@ -130,33 +121,21 @@ export function Offer() {
                 <div className="relative mx-auto h-28 w-28">
                   <div className="gold-fill absolute inset-0 rounded-full opacity-90 shadow-[0_16px_34px_-14px_rgba(179,135,40,0.6)]" />
                   <div className="absolute inset-[3px] grid place-items-center rounded-full bg-[#fdfbf7] shadow-[inset_0_2px_12px_rgba(90,70,40,0.14)]">
-                    <motion.div
-                      className="grid place-items-center"
+                    <motion.img
+                      src={item.icon}
+                      alt=""
+                      aria-hidden
+                      loading="lazy"
+                      width={640}
+                      height={640}
+                      className="h-16 w-16 object-contain drop-shadow-[0_8px_14px_rgba(90,70,40,0.28)]"
                       animate={{ y: [0, -7, 0] }}
                       transition={{
                         duration: 5 + i * 0.4,
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                    >
-                      {item.Icon ? (
-                        <item.Icon
-                          className="h-14 w-14 text-[#b0801f] drop-shadow-[0_6px_10px_rgba(90,70,40,0.25)]"
-                          strokeWidth={1.5}
-                          aria-hidden
-                        />
-                      ) : (
-                        <img
-                          src={item.icon}
-                          alt=""
-                          aria-hidden
-                          loading="lazy"
-                          width={640}
-                          height={640}
-                          className="h-16 w-16 object-contain drop-shadow-[0_8px_14px_rgba(90,70,40,0.28)]"
-                        />
-                      )}
-                    </motion.div>
+                    />
                   </div>
                 </div>
                 <h3 className="gold-text mt-6 text-2xl">{item.title}</h3>
