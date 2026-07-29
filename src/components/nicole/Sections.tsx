@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Coffee, CakeSlice, Baby, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Coffee,
+  CakeSlice,
+  Baby,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  Pizza,
+  type LucideIcon,
+} from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
 import platter from "@/assets/platter.jpg";
 import venecky from "@/assets/venecky.jpg";
@@ -77,7 +86,7 @@ export function About() {
   );
 }
 
-const offer = [
+const offer: { icon?: string; Icon?: LucideIcon; title: string; desc: string }[] = [
   {
     icon: iconCoffee,
     title: "Káva",
@@ -94,7 +103,7 @@ const offer = [
     desc: "Narozeniny, svatby, oslavy. Podle vaší představy, do posledního detailu.",
   },
   {
-    icon: iconCroissant,
+    Icon: Pizza,
     title: "Pizza & slané",
     desc: "Když máte chuť na něco pořádného. Křupavé těsto, poctivé suroviny.",
   },
@@ -121,21 +130,33 @@ export function Offer() {
                 <div className="relative mx-auto h-28 w-28">
                   <div className="gold-fill absolute inset-0 rounded-full opacity-90 shadow-[0_16px_34px_-14px_rgba(179,135,40,0.6)]" />
                   <div className="absolute inset-[3px] grid place-items-center rounded-full bg-[#fdfbf7] shadow-[inset_0_2px_12px_rgba(90,70,40,0.14)]">
-                    <motion.img
-                      src={item.icon}
-                      alt=""
-                      aria-hidden
-                      loading="lazy"
-                      width={640}
-                      height={640}
-                      className="h-16 w-16 object-contain drop-shadow-[0_8px_14px_rgba(90,70,40,0.28)]"
+                    <motion.div
+                      className="grid place-items-center"
                       animate={{ y: [0, -7, 0] }}
                       transition={{
                         duration: 5 + i * 0.4,
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                    />
+                    >
+                      {item.Icon ? (
+                        <item.Icon
+                          className="h-14 w-14 text-[#b0801f] drop-shadow-[0_6px_10px_rgba(90,70,40,0.25)]"
+                          strokeWidth={1.5}
+                          aria-hidden
+                        />
+                      ) : (
+                        <img
+                          src={item.icon}
+                          alt=""
+                          aria-hidden
+                          loading="lazy"
+                          width={640}
+                          height={640}
+                          className="h-16 w-16 object-contain drop-shadow-[0_8px_14px_rgba(90,70,40,0.28)]"
+                        />
+                      )}
+                    </motion.div>
                   </div>
                 </div>
                 <h3 className="gold-text mt-6 text-2xl">{item.title}</h3>
