@@ -18,6 +18,7 @@ import iconCoffee from "@/assets/icon-coffee.png";
 import iconCake from "@/assets/icon-cake.png";
 import iconMacaron from "@/assets/icon-macaron.png";
 import iconPizza from "@/assets/icon-pizza.svg";
+import iconIcecream from "@/assets/icon-icecream.svg";
 
 export function About() {
   return (
@@ -99,9 +100,9 @@ const offer = [
     desc: "Když máte chuť na něco pořádného. Křupavé těsto, poctivé suroviny.",
   },
   {
-    icon: iconMacaron,
+    icon: iconIcecream,
     title: "Něco pro děti",
-    desc: "Malé porce, dětské nápoje a koutek, kde je jim dobře.",
+    desc: "Malé porce, zmrzlina, dětské nápoje a koutek, kde je jim dobře.",
   },
 ];
 

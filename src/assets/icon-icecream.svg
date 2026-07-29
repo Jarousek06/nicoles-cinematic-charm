@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="cone" x1="250" y1="360" x2="360" y2="590" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EAB669"/>
+      <stop offset="1" stop-color="#C9822F"/>
+    </linearGradient>
+    <radialGradient id="pink" cx="0.4" cy="0.35" r="0.72">
+      <stop offset="0" stop-color="#FCCBDB"/>
+      <stop offset="1" stop-color="#F19BB7"/>
+    </radialGradient>
+    <radialGradient id="cream" cx="0.4" cy="0.35" r="0.72">
+      <stop offset="0" stop-color="#FFF6E1"/>
+      <stop offset="1" stop-color="#F2D9A2"/>
+    </radialGradient>
+    <radialGradient id="mint" cx="0.4" cy="0.35" r="0.72">
+      <stop offset="0" stop-color="#CDEBC4"/>
+      <stop offset="1" stop-color="#9FD08F"/>
+    </radialGradient>
+    <radialGradient id="cherry" cx="0.38" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#EC6248"/>
+      <stop offset="0.7" stop-color="#CE3A26"/>
+      <stop offset="1" stop-color="#A62518"/>
+    </radialGradient>
+    <clipPath id="coneClip"><path d="M250 358 L390 358 L320 592 Z"/></clipPath>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- drop shadow -->
+  <ellipse cx="322" cy="596" rx="120" ry="22" fill="#6E4E22" opacity="0.20" filter="url(#soft)"/>
+
+  <!-- cone -->
+  <path d="M250 358 L390 358 L320 592 Z" fill="url(#cone)"/>
+  <g clip-path="url(#coneClip)" stroke="#9C6220" stroke-width="6" opacity="0.45" stroke-linecap="round">
+    <line x1="170" y1="350" x2="330" y2="610"/>
+    <line x1="210" y1="350" x2="370" y2="610"/>
+    <line x1="250" y1="350" x2="410" y2="610"/>
+    <line x1="290" y1="350" x2="450" y2="610"/>
+    <line x1="470" y1="350" x2="310" y2="610"/>
+    <line x1="430" y1="350" x2="270" y2="610"/>
+    <line x1="390" y1="350" x2="230" y2="610"/>
+    <line x1="350" y1="350" x2="190" y2="610"/>
+  </g>
+  <!-- cone top rim -->
+  <ellipse cx="320" cy="360" rx="72" ry="15" fill="#D9A24E"/>
+
+  <!-- scoops -->
+  <circle cx="320" cy="338" r="82" fill="url(#pink)"/>
+  <circle cx="266" cy="300" r="52" fill="url(#mint)"/>
+  <circle cx="320" cy="258" r="66" fill="url(#cream)"/>
+
+  <!-- glossy highlights -->
+  <ellipse cx="290" cy="312" rx="26" ry="15" fill="#FFFFFF" opacity="0.30"/>
+  <ellipse cx="300" cy="238" rx="20" ry="12" fill="#FFFFFF" opacity="0.35"/>
+  <ellipse cx="250" cy="286" rx="15" ry="9" fill="#FFFFFF" opacity="0.30"/>
+
+  <!-- cherry -->
+  <path d="M322 212 Q330 178 350 166" stroke="#6E8B3D" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <circle cx="320" cy="212" r="21" fill="url(#cherry)"/>
+  <ellipse cx="312" cy="205" rx="6" ry="4" fill="#FF9A7E" opacity="0.6"/>
+</svg>
