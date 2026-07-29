@@ -326,27 +326,47 @@ export function Marquee() {
 
 const reviews = [
   {
-    text: "Příjemné prostředí se širokým výběrem cukrárenských produktů. Přidali i pizzu a dětský koutek.",
-    author: "Návštěvník",
-    source: "Firmy.cz",
+    text: "Příjemné místo s milou obsluhou. Dobré zákusky a zmrzlina, venkovní posezení. Jídlo, obsluha i atmosféra na jedničku.",
+    author: "Ondřej Hromádka Novák",
+    source: "Google",
   },
   {
-    text: "Dobrá káva a velký výběr sladkých zákusků.",
-    author: "Návštěvnice",
-    source: "Firmy.cz",
+    text: "Velice elegantní a příjemná cukrárna. Krásně vybavený a čistý dětský koutek, možnost posadit se i venku. Oceňuji i nabídku bezkofeinové kávy.",
+    author: "Michaela Klobásková",
+    source: "Google",
+  },
+  {
+    text: "Nádherná cukrárna, lotuskový dortík byl ten nejlepší dortík, co jsem kdy měla.",
+    author: "Anna",
+    source: "Google",
+  },
+  {
+    text: "Velice příjemná kavárna/cukrárna. Čistý a vybavený dětský koutek, včetně venkovní trampolíny. Zákusky opravdu výborné, to samé platí i pro kávu.",
+    author: "Dominik Todt",
+    source: "Google",
+  },
+  {
+    text: "Vynikající dorty, kafe i chlebíčky. Pěkné posezení uvnitř i venku. Jednoznačně doporučuji!",
+    author: "Motor Flash",
+    source: "Google",
+  },
+  {
+    text: "Konečně modernější podnik ve Štětí. Dobré limonády a káva, milá a ochotná obsluha.",
+    author: "Petr Šťastný",
+    source: "Google",
   },
 ];
 
 export function Reviews() {
   return (
     <section id="reference" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionTitle
           eyebrow="Reference"
           title="Co říkají hosté"
-          subtitle="Pár slov od těch, kdo se u nás zastavili."
+          subtitle="Hodnocení našich hostů z Googlu. Děkujeme za každé z nich."
         />
-        <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r, i) => (
             <Reveal key={i} delay={i * 0.1}>
               <figure className="glass-card glass-card-hover relative h-full rounded-[1.4rem] p-8 sm:p-10">
